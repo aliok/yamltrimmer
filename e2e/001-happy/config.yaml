@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../../configuration-schema.json
+input: https://raw.githubusercontent.com/actions/starter-workflows/dfc0cdc56b16efd9727aa420b4942723e48d065b/.github/workflows/lint.yaml
+output: output.yaml
+cache:
+  enabled: true
+  path: .yamltrimmer-cache
+include:
+  - key: name
+  - key: on
+  - key: jobs
+    include:
+      - key: pre-commit
+        include:
+          - key: runs-on

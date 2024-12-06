@@ -1,0 +1,8 @@
+name: Lint
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest

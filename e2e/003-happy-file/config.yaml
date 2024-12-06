@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../../configuration-schema.json
+input: ./input.yaml
+output: output.yaml
+cache:
+  enabled: true
+  path: .yamltrimmer-cache
+include:
+  - key: name
+  - key: on
+  - key: jobs
+    include:
+      - key: pre-commit
+        include:
+          - key: runs-on
