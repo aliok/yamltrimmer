@@ -28,4 +28,5 @@ jobs:
         run: go install cmd/yamltrimmer.go
 
       - name: Run unit tests
-        run: ./e2e/test.sh
+        run: ./test.sh
+        working-directory: ${{ github.workspace }}/e2e
