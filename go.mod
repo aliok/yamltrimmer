@@ -1,4 +1,4 @@
-module github.com/aliok/yamltrimmer/v1
+module github.com/aliok/yamltrimmer
 
 go 1.23.2
 
