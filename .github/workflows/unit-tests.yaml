@@ -1,0 +1,31 @@
+name: Run unit tests
+
+on:
+  push:
+    branches: [ 'main' ]
+
+  pull_request:
+    branches: [ 'main' ]
+
+jobs:
+  build:
+    name: Run unit tests
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.23      # must be in sync with the version in go.mod
+
+      - name: Install the build dependencies
+        run: go mod tidy
+
+      - name: Install the binary
+        run: go install cmd/yamltrimmer.go
+
+      - name: Run unit tests
+        run: ./e2e/test.sh
