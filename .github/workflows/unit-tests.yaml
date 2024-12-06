@@ -25,7 +25,7 @@ jobs:
         run: go mod tidy
 
       - name: Install the binary
-        run: go install cmd/yamltrimmer.go
+        run: go install cmd/yamltrimmer/yamltrimmer.go
 
       - name: Run unit tests
         run: ./test.sh
